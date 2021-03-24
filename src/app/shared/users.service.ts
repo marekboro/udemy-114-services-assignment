@@ -9,24 +9,21 @@ export class UsersService {
     
     constructor(private counterService: CounterService){}
 
-    onSetToInactive(id: number) {
+    setToInactive(id: number) {
         this.inactiveUsers.push(this.activeUsers[id]);
         this.activeUsers.splice(id, 1);
-        this.counterService.addCount();
-        
+        this.counterService.increaseActiveToInactiveCount();
       }
     
-    onSetToActive(id: number) {
+    setToActive(id: number) {
         this.activeUsers.push(this.inactiveUsers[id]);
         this.inactiveUsers.splice(id, 1);
-        this.counterService.addCount();
-    
+        this.counterService.increaseInactiveToActiveCount();
       }
 
-    showCounter():number{
-        // console.log("ShowCounter: " + this.counterService.getCount())
-        return this.counterService.getCount()
-    }
+    // showCounter():number{
+    //     return this.counterService.getCount()
+    // }
 
 
 }

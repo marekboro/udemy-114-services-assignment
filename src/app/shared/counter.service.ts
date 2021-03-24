@@ -2,14 +2,14 @@ import { Injectable } from "@angular/core";
 
 @Injectable({providedIn:'root'})
 export class CounterService {
-    counter: number = 0;
+    counterActivetoInactive = 0;
+    counterInactivetoActive = 0;
 
-    addCount(){
-        this.counter++;
-        // console.log("addCount ran " + this.counter)
+    increaseActiveToInactiveCount(){
+        this.counterActivetoInactive++;
     }
-    getCount():number{
-        return this.counter;
+    increaseInactiveToActiveCount(){
+        this.counterInactivetoActive++;
     }
 
 }
