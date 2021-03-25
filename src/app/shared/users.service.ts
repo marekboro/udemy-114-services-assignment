@@ -21,9 +21,7 @@ export class UsersService {
         this.counterService.increaseInactiveToActiveCount();
       }
 
-    // showCounter():number{
-    //     return this.counterService.getCount()
-    // }
+    
 
 
 }
